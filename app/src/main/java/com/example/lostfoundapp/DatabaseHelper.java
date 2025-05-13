@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL_DESCRIPTION = "description";
     private static final String COL_DATE = "date";
     private static final String COL_LOCATION = "location";
-    private static final String COL_TYPE = "type"; // Lost or Found
+    private static final String COL_TYPE = "type";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -39,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE);
     }
 
-    // Upgrade if version changes
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);

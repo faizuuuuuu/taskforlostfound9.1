@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +18,13 @@
         android:theme="@style/Theme.LostFoundApp"
         tools:targetApi="31">
 
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCOpMIfeRtINdwJjWLp8zR8E2WH5f4nNRc"/>
+
+
+        <activity android:name=".MapActivity" />
         <activity android:name=".ItemDetailActivity" />
 
         <activity

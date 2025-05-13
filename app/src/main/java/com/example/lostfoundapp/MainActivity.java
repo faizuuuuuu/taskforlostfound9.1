@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lostfoundapp.R;
-
 public class MainActivity extends AppCompatActivity {
-    Button btnCreateAdvert, btnViewItems;
+    Button btnCreateAdvert, btnViewItems, btnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +16,18 @@ public class MainActivity extends AppCompatActivity {
 
         btnCreateAdvert = findViewById(R.id.btnCreateAdvert);
         btnViewItems = findViewById(R.id.btnViewItems);
+        btnMap = findViewById(R.id.btnMap);  // ✅ Moved inside onCreate
 
         btnCreateAdvert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, PostAdvertActivity.class));
             }
+        });
+
+        btnMap.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MapActivity.class);
+            startActivity(intent);
         });
 
         btnViewItems.setOnClickListener(new View.OnClickListener() {
@@ -34,3 +38,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
+
