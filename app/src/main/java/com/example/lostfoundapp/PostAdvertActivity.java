@@ -52,7 +52,7 @@ public class PostAdvertActivity extends AppCompatActivity {
 
 
         if (!Places.isInitialized()) {
-            Places.initialize(getApplicationContext(), "AIzaSyCOpMIfeRtINdwJjWLp8zR8E2WH5f4nNRc");
+            Places.initialize(getApplicationContext(), "");
         }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
